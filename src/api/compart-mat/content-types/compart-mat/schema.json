@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "compart_mats",
+  "info": {
+    "singularName": "compart-mat",
+    "pluralName": "compart-mats",
+    "displayName": "Art.Comp - Mat.",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "articulo_compuesto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::compound-article.compound-article",
+      "inversedBy": "art_comp_mats"
+    },
+    "material": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::material.material",
+      "inversedBy": "art_comp_mats"
+    },
+    "cantidad": {
+      "type": "float",
+      "required": true,
+      "default": 1
+    }
+  }
+}

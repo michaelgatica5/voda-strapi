@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Categorias",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "instalacion": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Linea",
+        "Categoria",
+        "Rubro"
+      ],
+      "required": true
+    },
+    "materiales": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::material.material",
+      "mappedBy": "categoria"
+    },
+    "articulos_compuestos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::compound-article.compound-article",
+      "mappedBy": "categoria"
+    }
+  }
+}
